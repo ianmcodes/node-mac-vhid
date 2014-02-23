@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		54E9AB7418B90AF300179561 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54E9AB7318B90AF300179561 /* main.cpp */; };
 		54E9AB7618B90AF300179561 /* node_mac_hid.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 54E9AB7518B90AF300179561 /* node_mac_hid.1 */; };
+		54E9AB7E18B920AC00179561 /* index.js in Sources */ = {isa = PBXBuildFile; fileRef = 54E9AB7D18B920AC00179561 /* index.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		54E9AB7018B90AF300179561 /* node-mac-hid */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "node-mac-hid"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E9AB7318B90AF300179561 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		54E9AB7518B90AF300179561 /* node_mac_hid.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = node_mac_hid.1; sourceTree = "<group>"; };
+		54E9AB7C18B91B6C00179561 /* binding.gyp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = binding.gyp; path = "node-mac-hid/binding.gyp"; sourceTree = "<group>"; };
+		54E9AB7D18B920AC00179561 /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +47,8 @@
 		54E9AB6718B90AF300179561 = {
 			isa = PBXGroup;
 			children = (
+				54E9AB7D18B920AC00179561 /* index.js */,
+				54E9AB7C18B91B6C00179561 /* binding.gyp */,
 				54E9AB7218B90AF300179561 /* node-mac-hid */,
 				54E9AB7118B90AF300179561 /* Products */,
 			);
@@ -118,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54E9AB7418B90AF300179561 /* main.cpp in Sources */,
+				54E9AB7E18B920AC00179561 /* index.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +201,11 @@
 		54E9AB7A18B90AF300179561 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include/node/,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -202,6 +213,11 @@
 		54E9AB7B18B90AF300179561 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include/node/,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

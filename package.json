@@ -1,0 +1,15 @@
+{
+  "name": "mac-vhid",
+  "description": "Node addon that allows you to control the mouse and keyboard on a Mac through a virtual human input device.",
+  "keywords": [ "hid", "keyboard", "mouse" ],
+  "version": "0.0.1",
+  "licence": "MIT",
+  "author": "Ian McCall <imccall@da-puck.com> (http://www.da-puck.com/)",
+  "main": "./build/Release/machid.node",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dapuck/node-mac-vhid.git"
+  },
+  "homepage": "https://github.com/dapuck/node-mac-vhid",
+  "os": [ "darwin" ]
+}
