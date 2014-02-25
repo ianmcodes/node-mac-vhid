@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5483ABAE18BC17ED00F596BA /* boxstep.js in Sources */ = {isa = PBXBuildFile; fileRef = 5483ABAD18BC17ED00F596BA /* boxstep.js */; };
 		54E9AB7418B90AF300179561 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 54E9AB7318B90AF300179561 /* main.cpp */; };
 		54E9AB7618B90AF300179561 /* node_mac_hid.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 54E9AB7518B90AF300179561 /* node_mac_hid.1 */; };
-		54E9AB7E18B920AC00179561 /* index.js in Sources */ = {isa = PBXBuildFile; fileRef = 54E9AB7D18B920AC00179561 /* index.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,11 +26,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5483ABA818BC17ED00F596BA /* binding.gyp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = binding.gyp; sourceTree = "<group>"; };
+		5483ABA918BC17ED00F596BA /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		5483ABAA18BC17ED00F596BA /* package.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
+		5483ABAB18BC17ED00F596BA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		5483ABAD18BC17ED00F596BA /* boxstep.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = boxstep.js; sourceTree = "<group>"; };
 		54E9AB7018B90AF300179561 /* node-mac-hid */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "node-mac-hid"; sourceTree = BUILT_PRODUCTS_DIR; };
 		54E9AB7318B90AF300179561 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		54E9AB7518B90AF300179561 /* node_mac_hid.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = node_mac_hid.1; sourceTree = "<group>"; };
-		54E9AB7C18B91B6C00179561 /* binding.gyp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = binding.gyp; path = "node-mac-hid/binding.gyp"; sourceTree = "<group>"; };
-		54E9AB7D18B920AC00179561 /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,11 +47,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5483ABAC18BC17ED00F596BA /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				5483ABAD18BC17ED00F596BA /* boxstep.js */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
 		54E9AB6718B90AF300179561 = {
 			isa = PBXGroup;
 			children = (
-				54E9AB7D18B920AC00179561 /* index.js */,
-				54E9AB7C18B91B6C00179561 /* binding.gyp */,
+				5483ABA818BC17ED00F596BA /* binding.gyp */,
+				5483ABA918BC17ED00F596BA /* LICENSE.txt */,
+				5483ABAA18BC17ED00F596BA /* package.json */,
+				5483ABAB18BC17ED00F596BA /* README.md */,
+				5483ABAC18BC17ED00F596BA /* tests */,
 				54E9AB7218B90AF300179561 /* node-mac-hid */,
 				54E9AB7118B90AF300179561 /* Products */,
 			);
@@ -122,8 +136,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5483ABAE18BC17ED00F596BA /* boxstep.js in Sources */,
 				54E9AB7418B90AF300179561 /* main.cpp in Sources */,
-				54E9AB7E18B920AC00179561 /* index.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +255,7 @@
 				54E9AB7B18B90AF300179561 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
