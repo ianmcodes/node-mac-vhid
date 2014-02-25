@@ -145,6 +145,11 @@ Handle<Value> mouseShow(const Arguments& args) {
 	return scope.Close(Undefined());
 }
 
+/*
+ * Number button
+ *   Left -> 0
+ *  Right -> 1
+ */
 Handle<Value> mouseBtnDown(const Arguments& args) {
 	HandleScope scope;
 	uint32_t btn = 0;
@@ -155,7 +160,11 @@ Handle<Value> mouseBtnDown(const Arguments& args) {
 	return scope.Close(Undefined());
 }
 
-
+/*
+ * Number button
+ *   Left -> 0
+ *  Right -> 1
+ */
 Handle<Value> mouseBtnUp(const Arguments& args) {
 	HandleScope scope;
 	uint32_t btn = 0;
