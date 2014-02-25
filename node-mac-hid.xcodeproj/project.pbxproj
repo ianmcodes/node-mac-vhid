@@ -26,7 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5483ABA818BC17ED00F596BA /* binding.gyp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = binding.gyp; sourceTree = "<group>"; };
+		5483ABA818BC17ED00F596BA /* binding.gyp */ = {isa = PBXFileReference; explicitFileType = text.json; fileEncoding = 4; path = binding.gyp; sourceTree = "<group>"; };
 		5483ABA918BC17ED00F596BA /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		5483ABAA18BC17ED00F596BA /* package.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
 		5483ABAB18BC17ED00F596BA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
