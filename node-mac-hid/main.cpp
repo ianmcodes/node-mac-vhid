@@ -12,11 +12,12 @@
 
 using namespace v8;
 
+CGEventSourceRef evtSrc = CGEventSourceCreate(kCGEventSourceStateHIDSystemState);
+
 ///////////////////////////////
 /*****************************
  * Mouse getters and setters *
  *****************************/
-CGEventSourceRef evtSrc = CGEventSourceCreate(kCGEventSourceStateHIDSystemState);
 CGRect bounds = CGDisplayBounds(kCGDirectMainDisplay);
 double maxY = bounds.size.height;
 double maxX = bounds.size.width;
@@ -67,6 +68,16 @@ void button(uint32_t btn, bool up) {
 	CGPoint pt = getMousePosition();
 	CGEventRef evt = CGEventCreateMouseEvent(evtSrc, evtType, pt, btn);
 	CGEventPost(kCGHIDEventTap, evt);
+	CFRelease(evt);
+}
+///////////////////////////////
+
+///////////////////////////////
+/************
+ * Keyboard *
+ ************/
+void key(uint32_t code, bool down) {
+	CGEventRef evt = CGEventCreateKeyboardEvent(evtSrc, (CGKeyCode)code, down);
 	CFRelease(evt);
 }
 ///////////////////////////////
@@ -175,6 +186,31 @@ Handle<Value> mouseBtnUp(const Arguments& args) {
 	return scope.Close(Undefined());
 }
 
+Handle<Value> keyDown(const Arguments& args) {
+	HandleScope scope;
+	uint32_t code = 0;
+	if (args.Length() < 1 && !args[0]->IsNumber()) {
+		ThrowException(Exception::TypeError(String::New("Wrong arguments")));
+		return scope.Close(Undefined());
+	}
+	code = args[0]->Int32Value();
+	key(code, true);
+	return scope.Close(Undefined());
+}
+
+
+Handle<Value> keyUp(const Arguments& args) {
+	HandleScope scope;
+	uint32_t code = 0;
+	if (args.Length() < 1 && !args[0]->IsNumber()) {
+		ThrowException(Exception::TypeError(String::New("Wrong arguments")));
+		return scope.Close(Undefined());
+	}
+	code = args[0]->Int32Value();
+	key(code, false);
+	return scope.Close(Undefined());
+}
+
 void init(Handle<Object> exports) {
 	exports->Set(String::NewSymbol("mouseMoveDelta"),
 				 FunctionTemplate::New(mouseMoveDelta)->GetFunction());
@@ -188,6 +224,10 @@ void init(Handle<Object> exports) {
 				 FunctionTemplate::New(mouseBtnDown)->GetFunction());
 	exports->Set(String::NewSymbol("mouseBtnUp"),
 				 FunctionTemplate::New(mouseBtnUp)->GetFunction());
+	exports->Set(String::NewSymbol("keyDown"),
+				 FunctionTemplate::New(keyDown)->GetFunction());
+	exports->Set(String::NewSymbol("keyUp"),
+				 FunctionTemplate::New(keyUp)->GetFunction());
 }
 
 NODE_MODULE(machid, init)
