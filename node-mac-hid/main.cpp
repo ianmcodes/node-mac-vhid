@@ -19,8 +19,8 @@ CGEventSourceRef evtSrc = CGEventSourceCreate(kCGEventSourceStateHIDSystemState)
  * Mouse getters and setters *
  *****************************/
 CGRect bounds = CGDisplayBounds(kCGDirectMainDisplay);
-double maxY = bounds.size.height;
-double maxX = bounds.size.width;
+double maxY = bounds.size.height - 1;
+double maxX = bounds.size.width - 1;
 
 void setMousePosition(double x, double y) {
 	// sanity check will go here
@@ -78,6 +78,7 @@ void button(uint32_t btn, bool up) {
  ************/
 void key(uint32_t code, bool down) {
 	CGEventRef evt = CGEventCreateKeyboardEvent(evtSrc, (CGKeyCode)code, down);
+	CGEventPost(kCGHIDEventTap, evt);
 	CFRelease(evt);
 }
 ///////////////////////////////
